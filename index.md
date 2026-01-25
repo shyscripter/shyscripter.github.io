@@ -32,6 +32,10 @@
 - Removed the teleporter to trading servers, making the game mode no longer accessible
   * We have gone forward with the agreed upon decision to remove trading from the game
   * We don't have proper compensation ready yet! But you will get some special things in the next update when we add customization
+
+- The following karts have been added to the game: Deskjet, Sky Wave, Night-shifter, Geisha, Magnus, Ice Screamer, Turbo Tyke, Hampster, Travel Chaldron
+
+- The following karts have received remodels: Sunburst Roadster, Phoenix, Stallion, Boomboxer, Slingshot, Go-Wagon, Patriot, Ghille Jeep, Duality, Technisch, Breadwinner, Super Unicorn, Speed Box, Deja 86, Standard Kart (for the final time, trust)
 ```
 ## Small Changes
 ```md
@@ -72,10 +76,6 @@
 
 - Improved the VFX of the speed lines
 
-- The following vehicles have been remodeled:
-  * Standard Kart (for the final time, trust)
-  * 
-
 - Altered a few existing driver animations to adjust priority internally
   * Completely redid the panic (getting hit by an item) animation to be consistent across all vehicle types and to make it more obvious that the driver is losing control of the vehicle
 
@@ -84,6 +84,10 @@
 - Item Boxes have been remodeled
 
 - Your driver will now cheer when hitting someone with an item
+
+- AI drivers have been removed for the time being. They need a recode that wasn't able to be started on this update
+
+- For our collective sanity, the random vote option can no longer pick secret tracks in public servers
 ```
 ## Balance Changes
 ```
