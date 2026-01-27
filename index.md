@@ -11,26 +11,28 @@
 - Added a button in the settings menu to reset controls to their default keybinds
   * Clicking the button once will reset controls for all input devices, not just the one you're currently using
   * Existing keybinds are not erased. If you at any time wish to use default keybinds, reset keybinds by clicking the button in the controls page of the settings menu
+  * I recommend resetting your controls to the new default keybinds because a lot has changed!
 
 - Karts can now switch directions during a drift
   * Quickly release the drift button while holding the opposite direction then hold the drift button again
   * You can repeat this as many times as you want and still hold one continuous drift
-  * Doing this will remove a bit of your current charging drift boost. The current drift cannot downgrade to a lower tier in cases where the current charging progress is low
+  * Doing this will remove a bit of your current charging drift boost. The current drift cannot downgrade to a lower tier in cases where the current tier's charging progress is low
 
-- Tricking has been completely overhauled to allow multiple tricks per jump with extra mechanical depth
+- Tricking has been completely overhauled to allow multiple tricks per jump for extra mechanical depth
   * Trick boosts start as strong as blue drifting boosts
   * Each successful trick in a row upgrades the boost's tier
   * Any consecutive tricks past three in a row are purely for style, tricking cannot give you a boost stronger than that of a purple drift
   * It is now possible to fail tricks if the kart lands on the ground before the trick animation is complete
   * Failed tricks give no boost and kill all current momentum (does not stun you)
 
-- Items can now be used in two different ways, with their main fire or their alternative fire
+- Most items can now be used in two different ways, with their main fire or their alternative fire
   * Hazards can be deployed behind your kart or thrown forward
   * Projectiles can be sent forwards or backwards
   * Other items only have one mode of fire
+  * For mobile players, the game will automatically decide which mode of fire to use when pressing the item button
 
-- Removed the teleporter to trading servers, making the game mode no longer accessible
-  * We have gone forward with the agreed upon decision to remove trading from the game
+- Removed the teleporter to trading servers, making the feature no longer accessible
+  * We have gone forward with the voted upon decision to remove trading from the game
   * We don't have proper compensation ready yet! But you will get some special things in the next update when we add customization
 
 - The following karts have been added to the game: Deskjet, Sky Wave, Night-shifter, Geisha, Magnus, Ice Screamer, Turbo Tyke, Hampster, Travel Chaldron
@@ -75,6 +77,8 @@
   * We will go back to Realistic lighting when every track gets changes to their lighting to be a full on graphical upgrade
 
 - Improved the VFX of the speed lines
+
+- Moved the drift bar from the bottom of the HUD to where the vehicle is on the screen and made it vertical
 
 - Altered a few existing driver animations to adjust priority internally
   * Completely redid the panic (getting hit by an item) animation to be consistent across all vehicle types and to make it more obvious that the driver is losing control of the vehicle
