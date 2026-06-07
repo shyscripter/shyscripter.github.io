@@ -1,136 +1,82 @@
-# Karting League - Version 3.5.0
+# Karting League - Version 3.6.0
 
 ## New Additions
 ```md
-- Added a display for the amount of time left during intermissions between races
-  * This was never intended to be removed from the game and has been re-introduced during a recode of the core game loop to fix multiple oversights (including this one :P)
+- Vehicles now react to changes in momentum in each direction, including collisions
 
-- The lobby music has been changed and reacts when you open/close a menu in the lobby
-  * For those who preferred a previous iteration of the lobby theme, we may introduce some form of personalization in the future after higher-priority features get implemented
+- When starting a race, a new minigame has been added to determine the boost you get
 
-- Added a button in the settings menu to reset controls to their default keybinds
-  * Clicking the button once will reset controls for all input devices, not just the one you're currently using
-  * Existing keybinds are not erased. If you at any time wish to use default keybinds, reset keybinds by clicking the button in the controls page of the settings menu
-  * I recommend resetting your controls to the new default keybinds because a lot has changed!
+- The vehicle's traction is now affected by the terrain type that it's driving on. Vehicles with a high Off-Road stat can mitigate traction loss
+  * This is intended to give Off-Road vehicles a more solid niche than mowing through corner cuts, and to allow tracks on different terrain to play slightly differently
+  * When under the effects of a Cola/Boost Pad boost, traction loss is cut by a factor of 4
+  * Traction loss is cut in half when under the effects of a Power Orb. Stacks with previously mentioned boosts
 
-- Karts can now switch directions during a drift
-  * Quickly release the drift button while holding the opposite direction then hold the drift button again
-  * You can repeat this as many times as you want and still hold one continuous drift
-  * Doing this will remove a bit of your current charging drift boost. The current drift cannot downgrade to a lower tier in cases where the current tier's charging progress is low
+- You can now perform rolling burnouts when holding gas and brake at low speeds
+  * Also hold drift to perform a static burnout
 
-- Tricking has been completely overhauled to allow multiple tricks per jump for extra mechanical depth
-  * Trick boosts start as strong as blue drifting boosts
-  * Each successful trick in a row upgrades the boost's tier
-  * Any consecutive tricks past three in a row are purely for style, tricking cannot give you a boost stronger than that of a purple drift
-  * It is now possible to fail tricks if the kart lands on the ground before the trick animation is complete
-  * Failed tricks give no boost and kill all current momentum (does not stun you)
+- Reworked the vehicle engine sound system to use proper gearing and a separate idle sound
 
-- Most items can now be used in two different ways, with their main fire or their alternative fire
-  * Hazards can be deployed behind your kart or thrown forward
-  * Projectiles can be sent forwards or backwards
-  * Other items only have one mode of fire
-  * For mobile players, the game will automatically decide which mode of fire to use when pressing the item button
+- Added announcer voice lines that react to how you finish the race
 
-- Removed the teleporter to trading servers, making the feature no longer accessible
-  * We have gone forward with the voted upon decision to remove trading from the game
-  * We don't have proper compensation ready yet! But you will get some special things in the next update when we add customization
-
-- The following karts have been added to the game: Deskjet, Sky Wave, Night-shifter, Geisha, Magnus, Ice Screamer, Turbo Tyke, Hampster, Travel Chaldron
-
-- The following karts have received remodels: Sunburst Roadster, Phoenix, Stallion, Boomboxer, Slingshot, Go-Wagon, Patriot, Ghille Jeep, Duality, Technisch, Breadwinner, Super Unicorn, Speed Box, Deja 86, Standard Kart (for the final time, trust)
+- Transformation between car, boat, and plane physics has been implemented. These are currently not accessible in the main game because we need tracks that are designed with these new mechanics in mind to officially add them
+  * This is an open beta for CT creators to mess around with the transform mechanics and understand how they work in advance so they can begin making tracks with the new mechanics in mind
+  * The visual effects of transforms are not here yet, but they are fully functional. Model changes and additions are a feature we intend to add in the next update when transforms have the content they need in order to officially release into the main game
 ```
 ## Small Changes
 ```md
-- Maps use a new node system instead of needing "ItemWaypoints" and "Respawns" folders to be made separately
-* Expect the track kit and the custom tracks game to be updated sometime soon
-* The custom tracks game will not be backwards compatible. If you wish for older tracks to be playable, update your tracks when the track kit and custom tracks game get updated
+- Loading screen now smoothly fades in from a black screen when joining the game
 
-- Removed Banland Stadium, Castle In The Sky, Crossroads, Downtown, Freemodel Freeway, Kry Isle, (Legacy) Track Kit, Oasis Desert, Poisonous Grove, Red Planet, Snowfall Circuit, Thunderstorm Fortress, and Wild Wild East from the secret track pool, resulting in them all being vaulted until they get reworked
-  * Due to their lack of popularity in their current forms and the fact that these tracks were already put in the secret track pool, the current versions of these maps are not worth maintaining when these are already going to be the first tracks that get remodeled in the future
-  * All of these tracks will eventually return in some way, but we need time to deliver their remodels over the course of several updates
+- Refactored the entire game's backend to use a single script architecture model
+  * This doesn't really change anything at all for you guys, but it makes it leagues easier for us to add new features and fix bugs due to centralizing where code lives
 
-- If a server's core game loop ever throws an error, the server will shut itself down. Data is saved as this happens to prevent unintentional data loss in the event of a crash
+- Karts now lose speed more gradually when letting go of the accelerate button and when braking
 
-- For keyboard only, assigned new default keybinds:
-  * Q/E for main item usage/alt item usage
-  * Space for drifting
-  * Left Ctrl for brakedrifting
-  * Left Shift for looking backwards
+- A proper sound of nitrous (de)activating now plays when karts begin/end to boost
 
-- Left/right clicks from the mouse are now supported for main/alt item usage respectively
+- Switched the drifting tiers of orange and blue boosts primarily to spite Kiwi
+  * Now it's scientifically accurate!
 
-- Lowered the opacity of the rain in Master Speedway to improve visibility without ruining the track's theme
+- All tires now emit tire marks on the ground when drifting. Only the rear tires still emit smoke particles, which have been redesigned
+  * These effects are global and can be seen by all players
 
-- Removed the constant spinning of all karts in the menu to improve game performance in the lobby, but now a new animation will play when selecting a kart
+- Due to the way i patched the "you face the wrong way when spawning into a track" issue, you can no longer move around during a race's startup
 
-- Added new sounds in the menu that play when attempting to select/buy karts
+- A bar now appears above your character when pressing the respawn button, indicating that you need to hold the button to respawn manually
 
-- Terrain particles will now only render for your own kart
-  * This is a side effect of a recode of this particle system
-  * Intended to improve game performance when more karts are on the map at once
+- When racing in time trials, the kart will now spawn in the center of the starting grid instead of the left
 
-- Improved animations of karts when getting stunned
+- Changed the final lap and next lap sounds
 
-- Changed the game's lighting style from Realistic to Soft
-  * Reverting a previous change because this ended up being a downgrade to the game's graphics
-  * All current tracks were given lighting with the Soft style in mind and they look better with this lighting compared to the Realistic lighting style
-  * We will go back to Realistic lighting when every track gets changes to their lighting to be a full on graphical upgrade
-
-- Improved the VFX of the speed lines
-
-- Moved the drift bar from the bottom of the HUD to where the vehicle is on the screen and made it vertical
-
-- Altered a few existing driver animations to adjust priority internally
-  * Completely redid the panic (getting hit by an item) animation to be consistent across all vehicle types and to make it more obvious that the driver is losing control of the vehicle
-
-- Added new driver animations for item holding and usage
-
-- Item Boxes have been remodeled
-
-- Your driver will now cheer when hitting someone with an item
-
-- AI drivers have been removed for the time being. They need a recode that wasn't able to be started on this update
-
-- For our collective sanity, the random vote option can no longer pick secret tracks in public servers
+- Merged the CT codebase and the base game codebase into one, which should make future updating of CTs faster
+  * The Custom Tracks game is back up too! The track kit has been updated to include the new stuff that came with the update
 ```
 ## Balance Changes
 ```
-- Lightning (now Lightning Rod) now only hits drivers that are ahead of the user instead of hitting every player on the track
-  * This is intended to help the Lightning Rod help bring the pack closer to each other rather than unnecessarily slow down players who are already very far behind
-
-- Item Scrambler now grants temporary invulnerability upon use and was reworked to steal its target's item instead of deleting it
-  * Deleting items out of existence does not benefit the Item Scrambler's user. This is intended to help the Item Scrambler feel less underwhelming and have a distinct purpose
-
-- Forcefield (now Shield) can now only protect against one hit instead of giving temporary invulnerability
-- Shield can now block lightning
-  * Done to help the shield have a distinct purpose now that more items can be used defensively
-- Shield lifetime increased from 10s -> 20s
-
-- Time Bomb (now Dynamite) blast radius reduced from 50 -> 25 studs
-- Dynamite can now detonate upon contact with a kart
-  * The blast radius was way too large and made it nearly impossible to dodge a perfectly timed trap
-  * Instead of relying on a specific timing, detonation is intended to allow this item to be used offensively like the other hazard items
-
-- Some items now have global cooldowns that apply when the race starts and when the item is last used
-
-- Some items now have a maximum amount of players that can hold them at once
+- When hit by a tumbling stun tier item, you now lose your speed over a short time instead of being instantly stopped. Being instantly stopped is now solely reserved for the explosion stun tier
+  * During the initial item rework, Seeker Missiles (and its variants) were a little too punishing but directly nerfing them would harm the game's balance more than it would help
 ```
 ## Bugfixes
 ```md
-- Fixed a small jump on Shattered Sky that caused players to get stuck on the landing platform near the end of the track
+- Fixed an issue that caused the player to see a black screen when colliding with walls in strange ways
 
-- Fixed an issue that caused starting a drift when airborne to lock the vehicle's steering until the button is released
+- Corrected the categorization of walls on multiple tracks that were not supposed to be alignable
 
-- Fixed a visual bug where players who own the extra vote pass show up on the voting menu twice for a split second
+- Lowered some killplanes that are too high on multiple tracks
 
-- Fixed an issue that caused karts to not face the correct direction upon respawning
+- Added a killplane in FM Vista to an unintentionally accessible area that traps you inside (if you don't manually respawn)
 
-- Fixed an issue that prevented the camera from focusing on a new character when attempting to spectate other drivers
+- Added a missing rainbow script on the Power Orb's held item model
 
-- Brought back the background blur that was supposed to show up when opening a menu, the lack of one was a bug with the map lighting system
+- The lobby now correctly toggles its visibility when entering/leaving it due to previously being stalled infinitely by old code
 
-- Gravity alignment has been capped to 60 FPS, intended to fix weird alignment behavior at high framerate
+- Corrected boost feedback from drifting (wheelies and character movement), since it would always react as if the boost was a purple boost regardless of the actual boost tier the driver boosted with
 
-- Fixed issues with kill planes on Talora Dustwoods and Desert At Dawn
+- Added missing checks that were supposed to prevent the vehicle from starting a drift/switch drifting when in the air
+  * You can still hold a drift in the air if you started one when on the ground
+
+- You now finally face the correct direction when spawning into the track
+
+- Added a new check during the map flyover indented to fix an issue where the loading screen does not transition to the cutscene
+  * If this issue continues to exist, please make a bug report about it!
 ```
 ## [Enjoy and play here!](https://www.roblox.com/games/9416437817/Karting-League)
