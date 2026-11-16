@@ -56,6 +56,18 @@
 - The first iteration of the Lobby's remaster has been modeled
   * This version is not final, but complete enough for us to call the update done and begin focusing on more grounded updates in the future
   * It will receive model changes in a later update, but for now we believe that the Lobby is polished enough to use
+
+- Ranked has been reworked to act much more like a VR system that tracks your performance instead of being a separate gamemode
+  * Cosmetics have been added to replace the ranked standard karts, which you will be given for free if you already owned the karts before
+  * Ranked now works based on timed periods/seasons again, with the first rank reset happening in around four months
+  * When ranks are reset, the previous rank you had is taken into account when assigning your new rank
+
+- Added matchmaking signals that try to get you into servers with people who are close to your current elo range
+  * The current settings we have are experimental, and the settings may be difficult to see the effect of with a limited playerbase
+  * This was implemented now mainly for future proofing
+
+- CPU drivers are back. Until we can find a way to further optimize their bandwidth consumption, there will be a maximum of 3 CPU racers on the grid at one time
+  * You can adjust the amount of CPUs playing in private servers through the admin menu
 ```
 
 ## Small Changes
